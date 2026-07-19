@@ -701,3 +701,199 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ── Add Faculty / Add Course button ──────────────────── */
+.btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: 1px solid rgba(150, 172, 183, 0.3);
+  background: rgba(150, 172, 183, 0.08);
+  color: var(--dark);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  background: rgba(150, 172, 183, 0.16);
+  border-color: rgba(150, 172, 183, 0.55);
+  color: var(--white);
+  box-shadow: 0 0 8px rgba(150, 172, 183, 0.12);
+}
+
+.btn-add--lg {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+/* ── Course list ──────────────────────────────────────── */
+.admin-dash__course-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.admin-dash__course-list::-webkit-scrollbar {
+  width: 4px;
+}
+.admin-dash__course-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.admin-dash__course-list::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 99px;
+}
+
+.admin-dash__course-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.admin-dash__course-row:last-child {
+  border-bottom: none;
+}
+
+.admin-dash__course-row:hover {
+  background: var(--glow);
+}
+
+.admin-dash__course-code {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--dark);
+  background: rgba(150, 172, 183, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.admin-dash__course-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-dash__course-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-dash__course-meta {
+  font-size: 10px;
+  color: var(--dark-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Modal form variant ───────────────────────────────── */
+.admin-modal--form {
+  max-width: 580px;
+}
+
+.admin-modal__icon--add {
+  background: rgba(150, 172, 183, 0.1);
+  border: 1px solid rgba(150, 172, 183, 0.25);
+  color: var(--dark);
+}
+
+.admin-modal__body--form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 20px;
+  padding-left: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.admin-modal__body--form::-webkit-scrollbar {
+  width: 4px;
+}
+.admin-modal__body--form::-webkit-scrollbar-track {
+  background: transparent;
+}
+.admin-modal__body--form::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 99px;
+}
+
+/* ── Form layout helpers ──────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-row--single {
+  grid-template-columns: 1fr;
+  max-width: 50%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-required {
+  color: #f87171;
+  margin-left: 2px;
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2396ACB7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.form-input--error {
+  border-color: rgba(248, 113, 113, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.08);
+}
+
+.form-error {
+  font-size: 10px;
+  font-weight: 600;
+  color: #f87171;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row--single {
+    max-width: 100%;
+  }
+
+  .admin-modal--form {
+    max-width: 100%;
+  }
+}
